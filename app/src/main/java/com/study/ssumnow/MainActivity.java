@@ -12,9 +12,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 public class MainActivity extends AppCompatActivity {
-private TabFragment1 tab1;
-private TabFragment2 tab2;
-private TabFragment3 tab3;
+    private TabFragment1 tab1;
+    private TabFragment2 tab2;
+    private TabFragment3 tab3;
 
     /**
      * The {@link android.support.v4.view.PagerAdapter} that will provide
@@ -34,6 +34,17 @@ private TabFragment3 tab3;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //if logged in goto *Home*
+        //else goto *Login*
+
+        //*Login*
+        //[reference]You want to start a new activity and destroy the previous one? If this is what you need, you can use: startActivity(new Intent(this, myActivity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
+        //use this when starting
+
+
+        //*Home*
+
+
         setContentView(R.layout.activity_main);
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
