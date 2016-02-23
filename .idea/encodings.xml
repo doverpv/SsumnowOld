@@ -1,6 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/study/ssumnow/SampleLoginActivity.java" charset="x-windows-949" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/study/ssumnow/SampleSignupActivity.java" charset="x-windows-949" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/study/ssumnow/kakao/BaseActivity.java" charset="x-windows-949" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/study/ssumnow/kakao/DialogBuilder.java" charset="x-windows-949" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/study/ssumnow/kakao/ExtraUserPropertyLayout.java" charset="x-windows-949" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/study/ssumnow/kakao/GlobalApplication.java" charset="x-windows-949" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/study/ssumnow/kakao/KakaoDialogSpinner.java" charset="x-windows-949" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/study/ssumnow/kakao/KakaoServiceListActivity.java" charset="x-windows-949" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/study/ssumnow/kakao/KakaoSpinnerAdapter.java" charset="x-windows-949" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/study/ssumnow/kakao/KakaoToast.java" charset="x-windows-949" />
+    <file url="file://$PROJECT_DIR$/app/src/main/java/com/study/ssumnow/kakao/Logger.java" charset="x-windows-949" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable-hdpi" charset="x-windows-949" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/kakaotalk_sample_login_background.png" charset="x-windows-949" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/usermgmt_sample_login_background.png" charset="x-windows-949" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/layout/layout_common_kakao_login.xml" charset="x-windows-949" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/layout/layout_usermgmt_extra_user_property.xml" charset="x-windows-949" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/layout/layout_usermgmt_signup.xml" charset="x-windows-949" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/layout/view_custom_list.xml" charset="x-windows-949" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/layout/view_popup.xml" charset="x-windows-949" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/layout/view_spinner.xml" charset="x-windows-949" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/layout/view_spinner_item.xml" charset="x-windows-949" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/values/attr.xml" charset="x-windows-949" />
     <file url="PROJECT" charset="UTF-8" />
   </component>
 </project>

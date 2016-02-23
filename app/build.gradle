@@ -33,4 +33,5 @@ dependencies {
 
     compile group: 'com.kakao.sdk', name: 'push', version: project.KAKAO_SDK_VERSION
     compile group: 'com.kakao.sdk', name: 'usermgmt', version: project.KAKAO_SDK_VERSION
+    compile group: 'com.kakao.sdk', name: 'sample', version: project.KAKAO_SDK_VERSION
 }
