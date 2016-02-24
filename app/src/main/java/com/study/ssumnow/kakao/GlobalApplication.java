@@ -26,7 +26,6 @@ import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.ImageLoader;
 import com.android.volley.toolbox.Volley;
 import com.kakao.auth.KakaoSDK;
-import com.kakao.sdk.sample.common.log.Logger;
 
 /**
  * ?´ë?ì§?? ìºì‹œë¥????˜ì??ì„œ ê´?¦¬?˜ê¸° ?„í•œ ? í”Œë¦¬ì??´ì…˜ ê°ì²´?´ë‹¤.

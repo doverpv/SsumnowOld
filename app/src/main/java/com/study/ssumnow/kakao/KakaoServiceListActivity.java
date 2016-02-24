@@ -11,6 +11,7 @@ import com.kakao.sdk.sample.push.PushMainActivity;
 import com.kakao.sdk.sample.usermgmt.UsermgmtMainActivity;
 import com.study.ssumnow.R;
 
+
 public class KakaoServiceListActivity extends BaseActivity implements OnClickListener {
 
     @Override

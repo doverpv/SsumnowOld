@@ -3,7 +3,6 @@ package com.study.ssumnow.kakao;
 import android.app.Activity;
 import android.content.Intent;
 
-import com.kakao.sdk.sample.common.widget.WaitingDialog;
 import com.study.ssumnow.SampleLoginActivity;
 import com.study.ssumnow.SampleSignupActivity;
 
