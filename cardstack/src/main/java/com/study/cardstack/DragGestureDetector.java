@@ -13,7 +13,7 @@ public class DragGestureDetector {
     public static String DEBUG_TAG = "DragGestureDetector";
     private GestureDetectorCompat mGestureDetector;
     private DragListener mListener;
-    private static boolean mStarted = false;
+    private boolean mStarted = false;
     private MotionEvent mOriginalEvent;
     public interface DragListener {
         boolean onDragStart(MotionEvent e1, MotionEvent e2, float distanceX,
@@ -23,10 +23,6 @@ public class DragGestureDetector {
         boolean onDragEnd(MotionEvent e1, MotionEvent e2);
 
         boolean onTapUp();
-    }
-
-    public static boolean getMStarted() {
-        return mStarted;
     }
 
     public DragGestureDetector(Context context, DragListener myDragListener){
