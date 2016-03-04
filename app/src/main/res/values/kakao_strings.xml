@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="kakao_app_key">K6Y+i+THmvc6k9bwtL3984KbVyA=</string>
+    <!--<string name="kakao_app_key">K6Y+i+THmvc6k9bwtL3984KbVyA=</string> -->
+    <string name="kakao_app_key">1af6f89fde0bf52587676619993d72cc</string>
 </resources>
 
-<!-- keytool -exportcert -alias androiddebugkey -keystore C:\Users\hhylu\.android -storepass android -keypass android | C:\OpenSSL-Win64\bin\openssl sha1 -binary | C:\OpenSSL-Win64\bin\openssl base64 -->
+<!-- keytool -exportcert -alias androiddebugkey -keystore C:\Users\hhylu\.android\debug.keystore -storepass android -keypass android | C:\OpenSSL-Win64\bin\openssl sha1 -binary | C:\OpenSSL-Win64\bin\openssl base64
+7lEmXPEgqs7R249d3AG2V1U8v8k= -->

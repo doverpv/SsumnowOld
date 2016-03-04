@@ -70,5 +70,7 @@ public class DragGestureDetector {
         }
     }
 
-
+    public boolean getMStarted() {
+        return mStarted;
+    }
 }

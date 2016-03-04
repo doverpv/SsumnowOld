@@ -12,7 +12,6 @@
         android:theme="@style/AppTheme.NoActionBar"
         android:name="com.study.ssumnow.GlobalApplication">
         <activity
-            android:theme="@style/SplashScreen"
             android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

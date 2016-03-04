@@ -3,7 +3,7 @@
     <string name="action_settings">설정</string>
     <string name="action_settings2">개인정보취급방침</string>
     <string name="action_settings3">문의 및 의견</string>
-    <string name="action_settings4">로그아웃</string>
+    <string name="action_logout">로그아웃</string>
 
     <string name="text_kakaostory">KakaoStory</string>
     <string name="text_kakaotalk">KakaoTalk</string>

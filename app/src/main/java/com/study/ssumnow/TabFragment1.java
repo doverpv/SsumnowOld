@@ -42,4 +42,8 @@ public class TabFragment1 extends Fragment {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
     }
+
+    public boolean getMStarted() {
+        return mCardStack.
+    }
 }
