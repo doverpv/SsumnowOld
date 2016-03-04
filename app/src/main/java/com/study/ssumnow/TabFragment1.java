@@ -43,7 +43,4 @@ public class TabFragment1 extends Fragment {
         super.onCreate(savedInstanceState);
     }
 
-    public boolean getMStarted() {
-        return mCardStack.dd.getMStarted();
-    }
 }
