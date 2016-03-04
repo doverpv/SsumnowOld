@@ -44,6 +44,6 @@ public class TabFragment1 extends Fragment {
     }
 
     public boolean getMStarted() {
-        return mCardStack.
+        return mCardStack.dd.getMStarted();
     }
 }

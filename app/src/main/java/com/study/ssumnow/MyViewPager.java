@@ -14,7 +14,7 @@ public class MyViewPager extends ViewPager {
 
     @Override
     public boolean onTouchEvent(MotionEvent ev) {
-        if (mCardStack.dd.getMStarted()) {
+        if (HomeActivity.tab1.getMStarted()) {
            return false;
         }
 
