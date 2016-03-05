@@ -26,7 +26,7 @@ public class CardStack extends RelativeLayout {
     private CardAnimator mCardAnimator;
     //private Queue<View> mIdleStack = new Queue<View>;
 
-
+    private DragGestureDetector.CardTouchListener activity;
 
     private CardEventListener mEventListener = new DefaultStackEventListener(300);
     private int mContentResource = 0;
@@ -83,7 +83,7 @@ public class CardStack extends RelativeLayout {
         for(int i = 0; i<mNumVisible; i++){
             addContainerViews();
         }
-        setupAnimation();
+        //setupAnimation();
     }
 
     private void addContainerViews(){
@@ -129,7 +129,7 @@ public class CardStack extends RelativeLayout {
         mCardAnimator = new CardAnimator(viewCollection, mColor);
         mCardAnimator.initLayout();
 
-        final DragGestureDetector dd = new DragGestureDetector(CardStack.this.getContext(),new DragGestureDetector.DragListener(){
+        final DragGestureDetector dd = new DragGestureDetector(activity, CardStack.this.getContext(),new DragGestureDetector.DragListener(){
 
             @Override
             public  boolean onDragStart(MotionEvent e1, MotionEvent e2,
@@ -271,6 +271,15 @@ public class CardStack extends RelativeLayout {
         View child = mAdapter.getView( lastIndex, getContentView(), parent);
         parent.removeAllViews();
         parent.addView(child);
+    }
+
+    public void setActivity(DragGestureDetector.CardTouchListener h) {
+        activity = h;
+        System.out.println("vincent : activity set check");
+        if (activity == null) {
+            System.out.println("vincent : activity set check == null again!");
+        }
+        setupAnimation();
     }
 
     public int getStackSize() {

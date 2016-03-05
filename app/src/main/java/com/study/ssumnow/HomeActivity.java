@@ -12,8 +12,9 @@ import android.view.MenuItem;
 
 import com.kakao.usermgmt.UserManagement;
 import com.kakao.usermgmt.callback.LogoutResponseCallback;
+import com.study.cardstack.DragGestureDetector;
 
-public class HomeActivity extends BaseActivity {
+public class HomeActivity extends BaseActivity implements DragGestureDetector.CardTouchListener{
     private TabFragment1 tab1;
     private TabFragment2 tab2;
     private TabFragment3 tab3;
@@ -28,10 +29,12 @@ public class HomeActivity extends BaseActivity {
      */
     private SectionsPagerAdapter mSectionsPagerAdapter;
 
+
     /**
      * The {@link ViewPager} that will host the section contents.
      */
-    private ViewPager mViewPager;
+    private static ViewPager mViewPager;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -89,6 +92,9 @@ public class HomeActivity extends BaseActivity {
         });
     }
 
+    public DragGestureDetector.CardTouchListener getActivity() {
+        return this;
+    }
     /**
      * A {@link FragmentPagerAdapter} that returns a fragment corresponding to
      * one of the sections/tabs/pages.
@@ -104,6 +110,7 @@ public class HomeActivity extends BaseActivity {
             switch (position) {
                 case 0:
                     tab1 = new TabFragment1();
+                    tab1.setActivity(getActivity());
                     return tab1;
                 case 1:
                     tab2 = new TabFragment2();
@@ -134,5 +141,16 @@ public class HomeActivity extends BaseActivity {
             }
             return null;
         }
+    }
+
+    @Override
+    public void cardTouchOff() {
+        System.out.println("vincent : here");
+        mViewPager.requestDisallowInterceptTouchEvent(true);
+    }
+
+    @Override
+    public void cardTouchOn() {
+        mViewPager.requestDisallowInterceptTouchEvent(false);
     }
 }

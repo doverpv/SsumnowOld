@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.study.cardstack.CardStack;
+import com.study.cardstack.DragGestureDetector;
 
 /**
  * Created by hhylu on 2016-02-04.
@@ -15,6 +16,11 @@ import com.study.cardstack.CardStack;
 public class TabFragment1 extends Fragment {
     private CardStack mCardStack;
     private CardsDataAdapter mCardAdapter;
+    private DragGestureDetector.CardTouchListener activity;
+
+    public void setActivity(DragGestureDetector.CardTouchListener h) {
+        activity = h;
+    }
 
     @Nullable
     @Override
@@ -24,6 +30,7 @@ public class TabFragment1 extends Fragment {
         mCardStack = (CardStack)view.findViewById(R.id.card_container);
 
         mCardStack.setContentResource(R.layout.card_content);
+        mCardStack.setActivity(activity);
         mCardStack.setStackMargin(20);
 
         mCardAdapter = new CardsDataAdapter(view.getContext());
@@ -33,7 +40,9 @@ public class TabFragment1 extends Fragment {
         mCardAdapter.add("test4");
         mCardAdapter.add("test5");
 
+
         mCardStack.setAdapter(mCardAdapter);
+
 
         return view;
     }

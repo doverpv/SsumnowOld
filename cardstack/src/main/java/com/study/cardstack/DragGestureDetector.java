@@ -10,9 +10,11 @@ import android.view.MotionEvent;
 
 //detect both tap and drag
 public class DragGestureDetector {
+
     public static String DEBUG_TAG = "DragGestureDetector";
     private GestureDetectorCompat mGestureDetector;
     private DragListener mListener;
+    private CardTouchListener mCardTouchListener;
     private boolean mStarted = false;
     private MotionEvent mOriginalEvent;
     public interface DragListener {
@@ -25,9 +27,16 @@ public class DragGestureDetector {
         boolean onTapUp();
     }
 
-    public DragGestureDetector(Context context, DragListener myDragListener){
+    public DragGestureDetector(CardTouchListener activity, Context context, DragListener myDragListener){
         mGestureDetector = new GestureDetectorCompat(context,new MyGestureListener());
         mListener = myDragListener;
+        mCardTouchListener = activity;
+        if (activity == null) {
+            System.out.println("vincent : activity still null!!");
+        }
+        if (mCardTouchListener == null) {
+            System.out.println("vincent : mcard touch still null");
+        }
     }
 
     public void onTouchEvent(MotionEvent event){
@@ -40,11 +49,20 @@ public class DragGestureDetector {
                     mListener.onDragEnd(mOriginalEvent, event);
                 }
                 mStarted = false;
+                System.out.println("vincent : cardTouch On request");
+                mCardTouchListener.cardTouchOn();
+                break;
             case (MotionEvent.ACTION_DOWN) :
                 //need to set this, quick tap will not generate drap event, so the
                 //originalEvent may be null for case action_up
                 //which lead to null pointer
                 mOriginalEvent = event;
+                System.out.println("vincent : cardTouch Off request");
+                if (mCardTouchListener == null) {
+                    System.out.println("vincent : is null!! ");
+                }
+                mCardTouchListener.cardTouchOff();
+                break;
         }
     }
 
@@ -68,6 +86,11 @@ public class DragGestureDetector {
 
             return mListener.onTapUp();
         }
+    }
+
+    public interface CardTouchListener {
+        void cardTouchOn();
+        void cardTouchOff();
     }
 
 }
