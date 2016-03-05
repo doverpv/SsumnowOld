@@ -9,6 +9,10 @@ public class CardUtils {
     final static int DIRECTION_TOP_RIGHT = 1;
     final static int DIRECTION_BOTTOM_LEFT = 2;
     final static int DIRECTION_BOTTOM_RIGHT = 3;
+    final static int DIRECTION_RIGHT = 4;
+    final static int DIRECTION_LEFT = 5;
+    final static int DIRECTION_BOTTOM = 6;
+
 
     public static void scale(View v, int pixel){
         LayoutParams params = (LayoutParams)v.getLayoutParams();
@@ -82,13 +86,22 @@ public class CardUtils {
     }
 
     public static int direction(float x1, float y1, float x2, float y2) {
-        if(x2>x1){//RIGHT
-            if(y2>y1){//BOTTOM
+        if(Math.abs(x2-x1)<100 && y2>y1) {//VERTICAL MOVEMENT
+            return DIRECTION_BOTTOM;
+        }
+        else if(x2>x1){//RIGHT
+            if(Math.abs(y2-y1)<100) {//STRAIGHT RIGHT
+                return DIRECTION_RIGHT;
+            }
+            else if(y2>y1){//BOTTOM
                 return DIRECTION_BOTTOM_RIGHT;
             }else{//TOP
                 return DIRECTION_TOP_RIGHT;
             }
         }else{//LEFT
+            if(Math.abs(y2-y1)<100) {//STRAIGHT LEFT
+                return DIRECTION_LEFT;
+            }
             if(y2>y1){//BOTTOM
                 return DIRECTION_BOTTOM_LEFT;
             }else{//TOP

@@ -23,7 +23,7 @@ public class CardAnimator{
     public ArrayList<View> mCardCollection;
     private float mRotation;
     private HashMap<View,LayoutParams> mLayoutsMap;
-    private LayoutParams[] mRemoteLayouts = new LayoutParams[4];
+    private LayoutParams[] mRemoteLayouts = new LayoutParams[7];
     private LayoutParams baseLayout;
     private int mStackMargin=20;
 
@@ -87,6 +87,9 @@ public class CardAnimator{
         mRemoteLayouts[1] = getMoveParams(topView, REMOTE_DISTANCE, REMOTE_DISTANCE);
         mRemoteLayouts[2] = getMoveParams(topView, -REMOTE_DISTANCE, -REMOTE_DISTANCE);
         mRemoteLayouts[3] = getMoveParams(topView, -REMOTE_DISTANCE, REMOTE_DISTANCE);
+        mRemoteLayouts[4] = getMoveParams(topView, 0, REMOTE_DISTANCE);
+        mRemoteLayouts[5] = getMoveParams(topView, 0, -REMOTE_DISTANCE);
+        mRemoteLayouts[6] = getMoveParams(topView, -REMOTE_DISTANCE-500, 0);
 
     }
 
@@ -197,7 +200,7 @@ public class CardAnimator{
         rotationAnim.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
             @Override
             public void onAnimationUpdate(ValueAnimator v) {
-                topView.setRotation(((Float) (v.getAnimatedValue())).floatValue());
+                topView.setRotation(((Float)v.getAnimatedValue()).floatValue());
             }
         });
 

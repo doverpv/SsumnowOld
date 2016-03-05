@@ -31,12 +31,6 @@ public class DragGestureDetector {
         mGestureDetector = new GestureDetectorCompat(context,new MyGestureListener());
         mListener = myDragListener;
         mCardTouchListener = activity;
-        if (activity == null) {
-            System.out.println("vincent : activity still null!!");
-        }
-        if (mCardTouchListener == null) {
-            System.out.println("vincent : mcard touch still null");
-        }
     }
 
     public void onTouchEvent(MotionEvent event){
@@ -49,7 +43,6 @@ public class DragGestureDetector {
                     mListener.onDragEnd(mOriginalEvent, event);
                 }
                 mStarted = false;
-                System.out.println("vincent : cardTouch On request");
                 mCardTouchListener.cardTouchOn();
                 break;
             case (MotionEvent.ACTION_DOWN) :
@@ -57,10 +50,6 @@ public class DragGestureDetector {
                 //originalEvent may be null for case action_up
                 //which lead to null pointer
                 mOriginalEvent = event;
-                System.out.println("vincent : cardTouch Off request");
-                if (mCardTouchListener == null) {
-                    System.out.println("vincent : is null!! ");
-                }
                 mCardTouchListener.cardTouchOff();
                 break;
         }

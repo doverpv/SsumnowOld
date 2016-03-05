@@ -28,7 +28,7 @@ public class CardStack extends RelativeLayout {
 
     private DragGestureDetector.CardTouchListener activity;
 
-    private CardEventListener mEventListener = new DefaultStackEventListener(300);
+    private CardEventListener mEventListener = new DefaultStackEventListener(150);
     private int mContentResource = 0;
 
 
