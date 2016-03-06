@@ -13,7 +13,6 @@ import com.kakao.util.helper.log.Logger;
 public class MainActivity extends BaseActivity {
     private SessionCallback callback;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -52,11 +51,5 @@ public class MainActivity extends BaseActivity {
                 Logger.e(exception);
             }
         }
-    }
-
-    protected void redirectSignupActivity() {
-        final Intent intent = new Intent(this, HomeActivity.class);
-        startActivity(intent);
-        finish();
     }
 }

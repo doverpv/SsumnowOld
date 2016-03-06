@@ -26,6 +26,7 @@ public class CardStack extends RelativeLayout {
     private CardAnimator mCardAnimator;
     //private Queue<View> mIdleStack = new Queue<View>;
 
+    //To send HomeAcitvity to startstack.DragGestureDetector
     private DragGestureDetector.CardTouchListener activity;
 
     private CardEventListener mEventListener = new DefaultStackEventListener(150);
@@ -129,6 +130,7 @@ public class CardStack extends RelativeLayout {
         mCardAnimator = new CardAnimator(viewCollection, mColor);
         mCardAnimator.initLayout();
 
+        //First parameter activity is HomeActivity which will be passed on to DragGestureDetector
         final DragGestureDetector dd = new DragGestureDetector(activity, CardStack.this.getContext(),new DragGestureDetector.DragListener(){
 
             @Override
@@ -273,12 +275,9 @@ public class CardStack extends RelativeLayout {
         parent.addView(child);
     }
 
+    //To send HomeAcitvity to startstack.DragGestureDetector
     public void setActivity(DragGestureDetector.CardTouchListener h) {
         activity = h;
-        System.out.println("vincent : activity set check");
-        if (activity == null) {
-            System.out.println("vincent : activity set check == null again!");
-        }
         setupAnimation();
     }
 

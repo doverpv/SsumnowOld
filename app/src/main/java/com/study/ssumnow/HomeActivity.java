@@ -58,7 +58,6 @@ public class HomeActivity extends BaseActivity implements DragGestureDetector.Ca
 
     }
 
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -110,6 +109,8 @@ public class HomeActivity extends BaseActivity implements DragGestureDetector.Ca
             switch (position) {
                 case 0:
                     tab1 = new TabFragment1();
+                    //First step to send this activity, which contains viewpager to cardstack.DragGestureDetector.
+                    //DragGestureDetector will reference this activity to call cardTouchOff/cardTouchOn to prevent touch viewpager intercepting touch events done to CardStack.
                     tab1.setActivity(getActivity());
                     return tab1;
                 case 1:

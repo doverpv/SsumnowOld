@@ -18,6 +18,7 @@ public class TabFragment1 extends Fragment {
     private CardsDataAdapter mCardAdapter;
     private DragGestureDetector.CardTouchListener activity;
 
+    //To send HomeAcitvity to startstack.DragGestureDetector
     public void setActivity(DragGestureDetector.CardTouchListener h) {
         activity = h;
     }
@@ -30,6 +31,7 @@ public class TabFragment1 extends Fragment {
         mCardStack = (CardStack)view.findViewById(R.id.card_container);
 
         mCardStack.setContentResource(R.layout.card_content);
+        //Second step to send HomeAcitvity to startstack.DragGestureDetector
         mCardStack.setActivity(activity);
         mCardStack.setStackMargin(20);
 

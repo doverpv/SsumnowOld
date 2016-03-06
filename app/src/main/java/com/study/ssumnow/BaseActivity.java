@@ -52,7 +52,7 @@ public class BaseActivity extends AppCompatActivity {
     }
 
     protected void redirectSignupActivity() {
-        final Intent intent = new Intent(this, HomeActivity.class);
+        final Intent intent = new Intent(this, SignUpActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
         startActivity(intent);
         finish();

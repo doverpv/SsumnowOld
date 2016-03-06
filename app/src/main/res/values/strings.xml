@@ -14,6 +14,12 @@
     <string name="text_storage">Storage API</string>
     <string name="text_chat_list">Chat Lists</string>
 
+    <!-- For user_signup layout -->
+    <string name="user_signup_nickname_hint">닉네임</string>
+    <string name="user_signup_age_hint">나이</string>
+    <string name="user_signup_female">여자</string>
+    <string name="user_signup_male">남자</string>
+
 
     <!-- For kakaoStory -->
     <string name="kakaostory_user_check_button">Check Story User</string>
@@ -38,7 +44,7 @@
     <string name="push_register">Register push token</string>
 
     <!-- For Push -->
-    <string name="usermgmg_signup_button">Signup</string>
+    <string name="usermgmg_signup_button">가입하기</string>
     <string name="usermgmg_me_button">Me</string>
     <string name="usermgmg_update_profile_button">Update</string>
 

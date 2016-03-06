@@ -30,6 +30,7 @@ public class DragGestureDetector {
     public DragGestureDetector(CardTouchListener activity, Context context, DragListener myDragListener){
         mGestureDetector = new GestureDetectorCompat(context,new MyGestureListener());
         mListener = myDragListener;
+        //HoomeActivity has been passed on as parameter
         mCardTouchListener = activity;
     }
 
