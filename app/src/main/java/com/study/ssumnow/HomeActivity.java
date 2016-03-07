@@ -10,8 +10,10 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.kakao.network.ErrorResult;
 import com.kakao.usermgmt.UserManagement;
 import com.kakao.usermgmt.callback.LogoutResponseCallback;
+import com.kakao.usermgmt.callback.UnLinkResponseCallback;
 import com.study.cardstack.DragGestureDetector;
 
 public class HomeActivity extends BaseActivity implements DragGestureDetector.CardTouchListener{
@@ -76,12 +78,33 @@ public class HomeActivity extends BaseActivity implements DragGestureDetector.Ca
             case R.id.action_settings:
                 return true;
             case R.id.action_logout:
-                onClickLogout();
+
+                //for testing purpose only, unlinking kakaoaccount
+                //onClickLogout();
+                testOnClickLogout();
         }
 
         return super.onOptionsItemSelected(item);
     }
 
+    private void testOnClickLogout() {
+        UserManagement.requestUnlink(new UnLinkResponseCallback() {
+            @Override
+            public void onSessionClosed(ErrorResult errorResult) {
+
+            }
+
+            @Override
+            public void onNotSignedUp() {
+
+            }
+
+            @Override
+            public void onSuccess(Long result) {
+                redirectLoginActivity();
+            }
+        });
+    }
     private void onClickLogout() {
         UserManagement.requestLogout(new LogoutResponseCallback() {
             @Override
@@ -146,7 +169,6 @@ public class HomeActivity extends BaseActivity implements DragGestureDetector.Ca
 
     @Override
     public void cardTouchOff() {
-        System.out.println("vincent : here");
         mViewPager.requestDisallowInterceptTouchEvent(true);
     }
 

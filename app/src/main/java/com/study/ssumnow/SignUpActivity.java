@@ -23,13 +23,16 @@ import java.util.Map;
  * Created by hhylu on 2016-03-06.
  */
 public class SignUpActivity extends BaseActivity {
-    private  static final String NAME_KEY = "name";
-    private  static final String AGE_KEY = "age";
-    private  static final String GENDER_KEY = "gender";
+    protected static final String NAME_KEY = "name";
+    protected static final String AGE_KEY = "age";
+    protected static final String GENDER_KEY = "gender";
+    protected static final String PROFILEIMAGE_KEY = "profile image";
 
     private EditText name;
     private EditText age;
     private RadioGroup gender;
+
+    private UserProfile userProfileValue;
 
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
@@ -135,6 +138,7 @@ public class SignUpActivity extends BaseActivity {
                 Logger.d("UserProfile : " + userProfile);
                 System.out.println("vincent : requestME onSuccess");
 
+                userProfileValue = userProfile;
                 redirectMainActivity();
             }
 
@@ -148,7 +152,22 @@ public class SignUpActivity extends BaseActivity {
 
     //Login/SignUp completed, run HomeActivity
     private void redirectMainActivity() {
-        startActivity(new Intent(this, HomeActivity.class));
+        Intent intent = new Intent(this, HomeActivity.class);
+        Map<String, String> map = userProfileValue.getProperties();
+        HashMap<String, String> hashMap = new HashMap<>(map);
+
+        String profileImage = userProfileValue.getProfileImagePath();
+        String name = hashMap.get(NAME_KEY);
+        String age = hashMap.get(AGE_KEY);
+        String gender = hashMap.get(GENDER_KEY);
+
+        intent.putExtra(PROFILEIMAGE_KEY, profileImage);
+        intent.putExtra(NAME_KEY, name);
+        intent.putExtra(AGE_KEY, age);
+        intent.putExtra(GENDER_KEY, gender);
+
+        startActivity(intent);
+
         finish();
     }
 }

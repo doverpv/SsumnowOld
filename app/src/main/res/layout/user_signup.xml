@@ -5,7 +5,7 @@
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/nickName"
+        android:id="@+id/name"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
@@ -19,7 +19,7 @@
         android:inputType="number"
         android:ems="10"
         android:id="@+id/age"
-        android:layout_below="@+id/nickName"
+        android:layout_below="@+id/name"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_alignParentRight="true"
@@ -40,14 +40,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/user_signup_female"
-            android:id="@+id/radioButton"
+            android:id="@+id/female"
             android:checked="false" />
 
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/user_signup_male"
-            android:id="@+id/radioButton2"
+            android:id="@+id/male"
             android:checked="false" />
 
     </RadioGroup>
