@@ -23,11 +23,11 @@ import java.util.Map;
  * Created by hhylu on 2016-03-06.
  */
 public class SignUpActivity extends BaseActivity {
-    private  static final String NAME_KEY = "nickName";
+    private  static final String NAME_KEY = "name";
     private  static final String AGE_KEY = "age";
     private  static final String GENDER_KEY = "gender";
 
-    private EditText nickName;
+    private EditText name;
     private EditText age;
     private RadioGroup gender;
 
@@ -40,7 +40,7 @@ public class SignUpActivity extends BaseActivity {
     protected void showSignup() {
         setContentView(R.layout.user_signup);
 
-        nickName = (EditText) findViewById(R.id.nickName);
+        name = (EditText) findViewById(R.id.name);
         age = (EditText) findViewById(R.id.age);
         gender = (RadioGroup) findViewById(R.id.gender);
         Button signupButton = (Button) findViewById(R.id.buttonSignup);
@@ -53,9 +53,22 @@ public class SignUpActivity extends BaseActivity {
     }
 
     private HashMap<String, String> getProperties(){
-        final String nickNameValue = nickName.getText().toString();
+        final String nickNameValue = name.getText().toString();
         final String ageValue = age.getText().toString();
-        final String genderValue = String.valueOf(gender.getCheckedRadioButtonId());
+
+        int genderID = gender.getCheckedRadioButtonId();
+        final String genderValue;
+        switch (genderID) {
+            case (R.id.male):
+                genderValue = "male";
+                break;
+            case (R.id.female):
+                genderValue = "female";
+                break;
+            default:
+                genderValue = null;
+                break;
+        }
 
         HashMap<String, String> properties = new HashMap<String, String>();
         if(nickNameValue != null)
@@ -120,17 +133,20 @@ public class SignUpActivity extends BaseActivity {
             @Override
             public void onSuccess(UserProfile userProfile) {
                 Logger.d("UserProfile : " + userProfile);
+                System.out.println("vincent : requestME onSuccess");
+
                 redirectMainActivity();
             }
 
             @Override
             public void onNotSignedUp() {
+                System.out.println("vincent : requestME showSignup");
                 showSignup();
             }
         });
     }
 
-    //Login/SignUp complete run HomeActivity
+    //Login/SignUp completed, run HomeActivity
     private void redirectMainActivity() {
         startActivity(new Intent(this, HomeActivity.class));
         finish();
